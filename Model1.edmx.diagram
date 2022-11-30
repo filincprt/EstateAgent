@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="59850ada427949ee90bb4d68eee85d96" Name="Diagram1">
+        <EntityTypeShape EntityType="Agent_rieltorDBModel.DealSet" Width="1.5" PointX="8.25" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Agent_rieltorDBModel.DemandSet" Width="1.5" PointX="6" PointY="18.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Agent_rieltorDBModel.logins_User" Width="1.5" PointX="3.75" PointY="15.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Agent_rieltorDBModel.PersonSet" Width="1.5" PointX="1.5" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Agent_rieltorDBModel.PersonSet_Agent" Width="1.5" PointX="3.75" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Agent_rieltorDBModel.PersonSet_Client" Width="1.5" PointX="3.75" PointY="12.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Agent_rieltorDBModel.RealEstateFilterSet" Width="1.5" PointX="3.75" PointY="19.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Agent_rieltorDBModel.RealEstateFilterSet_ApartmentFilter" Width="1.5" PointX="1.5" PointY="15.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Agent_rieltorDBModel.RealEstateFilterSet_HouseFilter" Width="1.5" PointX="1.5" PointY="19.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Agent_rieltorDBModel.RealEstateFilterSet_LandFilter" Width="1.5" PointX="1.5" PointY="22.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Agent_rieltorDBModel.RealEstateSet" Width="1.5" PointX="0.75" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Agent_rieltorDBModel.RealEstateSet_Apartment" Width="1.5" PointX="3" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Agent_rieltorDBModel.RealEstateSet_House" Width="1.5" PointX="3" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Agent_rieltorDBModel.RealEstateSet_Land" Width="1.5" PointX="3" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Agent_rieltorDBModel.SupplySet" Width="1.5" PointX="6" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Agent_rieltorDBModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="2.375" IsExpanded="true" />
+        <AssociationConnector Association="Agent_rieltorDBModel.DealDemand" ManuallyRouted="false" />
+        <AssociationConnector Association="Agent_rieltorDBModel.DealSupply" ManuallyRouted="false" />
+        <AssociationConnector Association="Agent_rieltorDBModel.DemandAgent" ManuallyRouted="false" />
+        <AssociationConnector Association="Agent_rieltorDBModel.DemandClient" ManuallyRouted="false" />
+        <AssociationConnector Association="Agent_rieltorDBModel.FK_DemandSet_RealEstateFilterSet" ManuallyRouted="false" />
+        <AssociationConnector Association="Agent_rieltorDBModel.FK_logins_User_PersonSet" ManuallyRouted="false" />
+        <AssociationConnector Association="Agent_rieltorDBModel.FK_Agent_inherits_Person" ManuallyRouted="false" />
+        <AssociationConnector Association="Agent_rieltorDBModel.FK_Client_inherits_Person" ManuallyRouted="false" />
+        <AssociationConnector Association="Agent_rieltorDBModel.SupplyAgent" ManuallyRouted="false" />
+        <AssociationConnector Association="Agent_rieltorDBModel.SupplyClient" ManuallyRouted="false" />
+        <AssociationConnector Association="Agent_rieltorDBModel.FK_RealEstateFilterSet_RealEstateFilterSet_ApartmentFilter" ManuallyRouted="false" />
+        <AssociationConnector Association="Agent_rieltorDBModel.FK_RealEstateFilterSet_RealEstateFilterSet_HouseFilter" ManuallyRouted="false" />
+        <AssociationConnector Association="Agent_rieltorDBModel.FK_RealEstateFilterSet_RealEstateFilterSet_LandFilter" ManuallyRouted="false" />
+        <AssociationConnector Association="Agent_rieltorDBModel.FK_Apartment_inherits_RealEstate" ManuallyRouted="false" />
+        <AssociationConnector Association="Agent_rieltorDBModel.FK_House_inherits_RealEstate" ManuallyRouted="false" />
+        <AssociationConnector Association="Agent_rieltorDBModel.FK_Land_inherits_RealEstate" ManuallyRouted="false" />
+        <AssociationConnector Association="Agent_rieltorDBModel.SupplyRealEstate" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

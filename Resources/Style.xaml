@@ -1,0 +1,80 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                xmlns:local="clr-namespace:EstateAgent">
+
+    <Style TargetType="Button" x:Key="FlatButtonStyle">
+        <Style.Triggers>
+            <EventTrigger RoutedEvent="Button.MouseEnter">
+            <EventTrigger.Actions>
+                <BeginStoryboard>
+                    <Storyboard>
+                        <DoubleAnimation
+                  Storyboard.TargetProperty="(Button.Opacity)"
+                  From="1.0" To="0.5" Duration="0:0:0.5" AutoReverse="True"
+                  RepeatBehavior="Forever" />
+                    </Storyboard>
+                </BeginStoryboard>
+            </EventTrigger.Actions>
+        </EventTrigger>
+
+        <!-- Returns the button's opacity to 1 when the mouse leaves. -->
+            <EventTrigger RoutedEvent="Button.MouseLeave">
+                <EventTrigger.Actions>
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation
+                  Storyboard.TargetProperty="(Button.Opacity)"
+                  To="1" Duration="0:0:0.1" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger.Actions>
+            </EventTrigger>
+
+            <EventTrigger RoutedEvent="Button.Click">
+            <EventTrigger.Actions>
+                <BeginStoryboard>
+                    <Storyboard>
+                        <ColorAnimation 
+                  Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)"
+                  From="Orange" To="White" Duration="0:0:0.1" AutoReverse="True" />
+                    </Storyboard>
+                </BeginStoryboard>
+            </EventTrigger.Actions>
+        </EventTrigger>
+        </Style.Triggers>
+        <Setter Property="Background" Value="#00ccff"/>
+        <Setter Property="Foreground" Value="#37474F"/>
+        <Setter Property="Width" Value="90"/>
+        <Setter Property="Height" Value="30"/>
+        <Setter Property="FontSize" Value="15"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border BorderThickness="0"
+                        Background="{TemplateBinding Background}"
+                        CornerRadius="6">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+    <BooleanToVisibilityConverter x:Key="BtoVisCnv"/>
+
+    <SolidColorBrush x:Key="Style_G1" Color="#F7F9F9" />
+
+    <SolidColorBrush x:Key="Style_A1" Color="#00D9BB" />
+
+    <SolidColorBrush x:Key="Style_B1" Color="#FFEE58" />
+
+    <SolidColorBrush x:Key="Style_T1" Color="#37474F" />
+    
+
+    <Style x:Key="StyledWindow" TargetType="Window">
+        <Setter Property="Background" Value="{StaticResource Style_G1}"/>
+        <Setter Property="FontSize" Value="15"></Setter>
+    </Style>
+
+</ResourceDictionary>
