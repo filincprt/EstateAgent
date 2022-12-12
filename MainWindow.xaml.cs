@@ -23,32 +23,30 @@ namespace EstateAgent
     /// </summary>
     public partial class MainWindow : Window
     {
-        private const string ConnectionString = "Data Source=FILINCPRT\\SQLEXPRESS;Initial Catalog=Agent_rieltorDB;Integrated Security=True;";
 
         public MainWindow()
         {
             InitializeComponent();
-
-            DataTable dt_user = Select("SELECT * FROM [dbo].[logins_User]"); // получаем данные из таблицы
-
-            OpenPage(pages.LogPage);
+            OpenPage(pages.SelectPage);
         }
 
         public enum pages
         {
-            LogPage,
-            SignInPage
+            SelectPage,
+            SignInPage,
+            SignInPage2
         }
 
         public void OpenPage(pages pages)
         {
-            if (pages == pages.LogPage)
+            if (pages == pages.SelectPage)
             {
-                FrameAuth.Navigate(new LogPage(this));
+                FrameAuth.Navigate(new SelectPage(this));
             }
             else if (pages == pages.SignInPage)
                 FrameAuth.Navigate(new SignInPage(this));
-
+            if (pages == pages.SignInPage2)
+                FrameAuth.Navigate(new SignInPage2(this));
         }
 
 
@@ -56,7 +54,7 @@ namespace EstateAgent
         {
             DataTable dataTable = new DataTable("dataBase");               
             
-            SqlConnection sqlConnection = new SqlConnection("Data Source=FILINCPRT\\SQLEXPRESS;Initial Catalog=Agent_rieltorDB;Integrated Security=True;");
+            SqlConnection sqlConnection = new SqlConnection("Data Source=FILINCPRT\\SQLEXPRESS;Initial Catalog=Agent_rielorsDB;Integrated Security=True");
             sqlConnection.Open();                                           // открываем базу данных
             SqlCommand sqlCommand = sqlConnection.CreateCommand();          // создаём команду
             sqlCommand.CommandText = selectSQL;                             // присваиваем команде текст

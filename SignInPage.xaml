@@ -14,26 +14,32 @@
             <RowDefinition Height="70"  />
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
 
-        <Border Background="#ECEFF1" Grid.Row="0"></Border>
-        <Image Source="Resources/logo.png" HorizontalAlignment="Left" Margin="324,5,0,5" Width="161" RenderTransformOrigin="0.696,0.484"></Image>
-        <Button x:Name="EnterBtnBack" Content="Войти" HorizontalAlignment="Left" Margin="290,295,0,0" Grid.Row="1" VerticalAlignment="Top" Style="{StaticResource FlatButtonStyle}" Click="EnterBtn_Click"/>
-        <Button x:Name="RegBntEnter" Content="Регистрация" HorizontalAlignment="Left" Margin="420,295,0,0" Grid.Row="1" VerticalAlignment="Top" Style="{StaticResource FlatButtonStyle}" Click="RegBnt_Click"/>
-        <PasswordBox x:Name="PasstxtBox"  HorizontalAlignment="Left" Grid.Row="1"  VerticalAlignment="Top" Width="200" Height="28" Margin="420,114,0,0" AutomationProperties.Name="PasswordTxtBoxenter" />
-        <TextBox x:Name="LogTxtBox" HorizontalAlignment="Left" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" Height="28" Margin="420,54,0,0" AutomationProperties.Name="LoginTxtBoxEnter" TextChanged="TextBox_TextChanged" TextAlignment="Center"/>
-        <TextBlock HorizontalAlignment="Left" Margin="506,40,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Логин" VerticalAlignment="Top" FontFamily="Roboto Light"/>
-        <TextBlock HorizontalAlignment="Left" Margin="500,100,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Пароль" VerticalAlignment="Top"  FontFamily="Roboto Black"/>
-        <PasswordBox x:Name="PasstxtBox_Check"  HorizontalAlignment="Left" Grid.Row="1"  VerticalAlignment="Center" Width="200" Height="28" Margin="420,0,0,0" AutomationProperties.Name="PasswordTxtBoxenter" />
-        <TextBlock HorizontalAlignment="Left" Margin="470,160,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Повторите пароль" VerticalAlignment="Top"  FontFamily="Roboto Black"/>
-        
-        <TextBox x:Name="LastNameTxtBox" HorizontalAlignment="Left" Margin="180,54,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" Height="28"/>
-        <TextBox x:Name="FirstNameTxtBox" HorizontalAlignment="Left" Margin="180,114,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" Height="28"/>
-        <TextBox x:Name="MiddleNameTxtBox" HorizontalAlignment="Left" Margin="180,0,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Center" Width="200" Height="28"/>
-        <TextBox x:Name="NumTxtBox" PreviewTextInput="NumTxtBox_PreviewTextInput" HorizontalAlignment="Left" Margin="180,234,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" Height="28" KeyDown="NumTxtBox_KeyDown"/>
-        <TextBlock HorizontalAlignment="Left" Margin="268,40,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Имя" VerticalAlignment="Top" FontFamily="Roboto Light"/>
-        <TextBlock Text="Фамилия" HorizontalAlignment="Left" Margin="256,100,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Roboto Light"/>
-        <TextBlock Text="Отчество" HorizontalAlignment="Left" Margin="256,160,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Roboto Light"/>
-        <TextBox HorizontalAlignment="Left" Margin="180,0,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Center" Width="200" Height="28"/>
-        <TextBlock HorizontalAlignment="Left" Margin="234,220,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Roboto Light" Width="94"><Run Language="ru-ru" Text="Номер телефона"/></TextBlock>
+        <Border Background="#ECEFF1" Grid.Row="0" Grid.ColumnSpan="2"></Border>
+        <Image Source="Resources/logo.png" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="324,5,0,5" Width="161" RenderTransformOrigin="0.696,0.484"></Image>
+        <Button x:Name="EnterBtnBack"  Content="Войти" HorizontalAlignment="Left" Margin="290,291,0,0" Grid.Row="1" VerticalAlignment="Top" Style="{StaticResource FlatButtonStyle}" Click="EnterBtn_Click"/>
+        <Button x:Name="RegBntEnter" Grid.Column="1" Content="Регистрация" HorizontalAlignment="Left" Margin="20,291,0,0"  VerticalAlignment="Top" Style="{StaticResource FlatButtonStyle}" Click="RegBnt_Click" Grid.Row="1" Width="94"/>
+        <PasswordBox x:Name="PasstxtBox"  HorizontalAlignment="Left" Grid.Row="1"  VerticalAlignment="Top" Width="200" Height="28" Margin="20,189,0,0" AutomationProperties.Name="PasswordTxtBoxenter" Grid.Column="1" />
+        <TextBox x:Name="LogTxtBox" HorizontalAlignment="Left" Grid.Column="1" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" Height="28" Margin="20,65,0,0" AutomationProperties.Name="LoginTxtBoxEnter" TextAlignment="Center"/>
+        <TextBlock HorizontalAlignment="Left" Margin="104,51,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Логин" VerticalAlignment="Top" FontFamily="Roboto Light" Grid.Column="1"/>
+        <TextBlock HorizontalAlignment="Left" Margin="98,170,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Пароль" VerticalAlignment="Top"  FontFamily="Roboto Black" Grid.Column="1" Width="44"/>
+        <PasswordBox x:Name="PasstxtBox_Check"  HorizontalAlignment="Left" Grid.Row="1"  VerticalAlignment="Top" Width="200" Height="28" Margin="20,245,0,0" AutomationProperties.Name="PasswordTxtBoxenter" Grid.Column="1" />
+        <TextBlock HorizontalAlignment="Left" Margin="68,231,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Повторите пароль" VerticalAlignment="Top"  FontFamily="Roboto Black" Grid.Column="1" Width="106"/>
+
+        <TextBox x:Name="FirstNameTxtBox" HorizontalAlignment="Left" Margin="180,65,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" Height="28"/>
+        <TextBox x:Name="MiddleNameTxtBox" HorizontalAlignment="Left" Margin="180,125,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" Height="28"/>
+        <TextBox x:Name="LastNameTxtBox" HorizontalAlignment="Left" Margin="180,189,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" Height="28"/>
+        <TextBox x:Name="NumTxtBox" PreviewTextInput="NumTxtBox_PreviewTextInput" HorizontalAlignment="Left" Margin="180,245,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" Height="28"/>
+        <TextBlock HorizontalAlignment="Left" Margin="268,51,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Имя" VerticalAlignment="Top" FontFamily="Roboto Light"/>
+        <TextBlock Text="Фамилия" HorizontalAlignment="Left" Margin="256,111,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Roboto Light"/>
+        <TextBlock Text="Отчество" HorizontalAlignment="Left" Margin="256,173,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Roboto Light"/>
+        <TextBlock HorizontalAlignment="Left" Margin="234,231,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Roboto Light" Width="94"><Run Language="ru-ru" Text="Номер телефона"/></TextBlock>
+        <TextBox x:Name="EmailTxtBox" HorizontalAlignment="Left" Grid.Column="1" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" Height="28" Margin="20,125,0,0" AutomationProperties.Name="EmailTxtBoxEnter" TextAlignment="Center"/>
+        <TextBlock HorizontalAlignment="Left" Margin="104,111,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Email" VerticalAlignment="Top" FontFamily="Roboto Light" Grid.Column="1"/>
+        <TextBlock HorizontalAlignment="Left" Margin="304,10,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Регистрация клиента" VerticalAlignment="Top" Grid.ColumnSpan="2" FontSize="20"/>
     </Grid>
 </Page>

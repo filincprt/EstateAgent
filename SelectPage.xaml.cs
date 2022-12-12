@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,24 +21,43 @@ namespace EstateAgent
     /// </summary>
     public partial class SelectPage : Page
     {
-        public SelectPage()
+        public MainWindow mainWindow;
+
+        public SelectPage(MainWindow _mainWindow)
         {
             InitializeComponent();
+            mainWindow = _mainWindow;
         }
 
         private void EnterBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            if (LogTxtBox.Text.Length > 0)
+            {
+                if (PasstxtBox.Password.Length > 0) // проверяем введён ли пароль         
+                {             // ищем в базе данных пользователя с такими данными         
+                    DataTable dt_user = mainWindow.Select("SELECT * FROM [dbo].[Client] WHERE [Login] = '" + LogTxtBox.Text + "' AND [Password] = '" + PasstxtBox.Password + "'");
+                    DataTable dt_users = mainWindow.Select("SELECT * FROM [dbo].[Agent] WHERE [Login] = '" + LogTxtBox.Text + "' AND [Password] = '" + PasstxtBox.Password + "'");
+                    if (dt_user.Rows.Count > 0 || dt_users.Rows.Count > 0) // если такая запись существует       
+                    {
+                        MessageBox.Show("Пользователь авторизовался"); // говорим, что авторизовался         
+                    }
+                    else MessageBox.Show("Пользователь не найден"); // выводим ошибку
+                }
+                else MessageBox.Show("Введите пароль"); // выводим ошибку
+            }
+            else MessageBox.Show("Введите логин"); // выводим ошибку 
         }
 
-        private void RegBnt_Click(object sender, RoutedEventArgs e)
-        {
 
+
+        private void RegBntClient_Click(object sender, RoutedEventArgs e)
+        {
+            mainWindow.OpenPage(MainWindow.pages.SignInPage2);
         }
 
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        private void RegBntAgent_Click(object sender, RoutedEventArgs e)
         {
-
+            mainWindow.OpenPage(MainWindow.pages.SignInPage);
         }
     }
 }

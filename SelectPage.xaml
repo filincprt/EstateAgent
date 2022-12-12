@@ -17,10 +17,10 @@
         <Border Background="#ECEFF1" Grid.Row="0"></Border>
         <Image Source="Resources/logo.png" HorizontalAlignment="Left" Margin="324,5,0,5" Width="161" RenderTransformOrigin="0.696,0.484"></Image>
         <Button x:Name="EnterBtn" Content="Войти" HorizontalAlignment="Center" Margin="0,205,0,0" Grid.Row="1" VerticalAlignment="Top" Style="{StaticResource GrayBtn}" Click="EnterBtn_Click" Width="150"/>
-        <Button x:Name="RegBntClient" Content="Регистрация клиента" HorizontalAlignment="Left" Margin="610,320,0,0" Grid.Row="1" VerticalAlignment="Top" Style="{StaticResource FlatButtonStyle}" Click="RegBnt_Click" Width="150"/>
-        <Button x:Name="RegBntAgent" Content="Регистрация агента" HorizontalAlignment="Left" Margin="40,320,0,0" Grid.Row="1" VerticalAlignment="Top" Style="{StaticResource FlatButtonStyle}" Click="RegBnt_Click" Width="150"/>
+        <Button x:Name="RegBntClient" Content="Регистрация клиента" HorizontalAlignment="Left" Margin="610,285,0,0" Grid.Row="1" VerticalAlignment="Top" Style="{StaticResource FlatButtonStyle}" Click="RegBntAgent_Click" Width="150"/>
+        <Button x:Name="RegBntAgent" Content="Регистрация агента" HorizontalAlignment="Left" Margin="40,285,0,0" Grid.Row="1" VerticalAlignment="Top" Style="{StaticResource FlatButtonStyle}" Click="RegBntClient_Click" Width="150"/>
         <PasswordBox x:Name="PasstxtBox"  HorizontalAlignment="Left" Grid.Row="1"  VerticalAlignment="Top" Width="200" Height="28" Margin="304,129,0,0" AutomationProperties.Name="PasswordTxtBoxenter" />
-        <TextBox x:Name="LogTxtBox" HorizontalAlignment="Left" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" Height="28" Margin="304,74,0,0" AutomationProperties.Name="LoginTxtBoxEnter" TextChanged="TextBox_TextChanged" TextAlignment="Center"/>
+        <TextBox x:Name="LogTxtBox" HorizontalAlignment="Left" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" Height="28" Margin="304,74,0,0" AutomationProperties.Name="LoginTxtBoxEnter" TextAlignment="Center"/>
         <TextBlock HorizontalAlignment="Left" Margin="235,79,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Логин:" VerticalAlignment="Top" FontFamily="Roboto Light"/>
         <TextBlock HorizontalAlignment="Left" Margin="230,134,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Пароль:" VerticalAlignment="Top"  FontFamily="Roboto Black"/>
     </Grid>
