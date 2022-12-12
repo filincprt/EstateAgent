@@ -33,7 +33,7 @@
         <TextBox x:Name="FirstNameTxtBox" HorizontalAlignment="Left" Margin="180,65,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" Height="28"/>
         <TextBox x:Name="MiddleNameTxtBox" HorizontalAlignment="Left" Margin="180,125,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" Height="28"/>
         <TextBox x:Name="LastNameTxtBox" HorizontalAlignment="Left" Margin="180,189,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" Height="28"/>
-        <TextBox x:Name="NumTxtBox" PreviewTextInput="NumTxtBox_PreviewTextInput" HorizontalAlignment="Left" Margin="180,245,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" Height="28"/>
+        <TextBox x:Name="NumTxtBox" MaxLength="10" PreviewTextInput="NumTxtBox_PreviewTextInput" HorizontalAlignment="Left" Margin="180,245,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" Height="28"/>
         <TextBlock HorizontalAlignment="Left" Margin="268,51,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Имя" VerticalAlignment="Top" FontFamily="Roboto Light"/>
         <TextBlock Text="Фамилия" HorizontalAlignment="Left" Margin="256,111,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Roboto Light"/>
         <TextBlock Text="Отчество" HorizontalAlignment="Left" Margin="256,173,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Roboto Light"/>

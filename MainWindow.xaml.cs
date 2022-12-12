@@ -34,7 +34,9 @@ namespace EstateAgent
         {
             SelectPage,
             SignInPage,
-            SignInPage2
+            SignInPage2,
+            CabinetAg,
+            CabinetCl
         }
 
         public void OpenPage(pages pages)
@@ -45,6 +47,10 @@ namespace EstateAgent
             }
             else if (pages == pages.SignInPage)
                 FrameAuth.Navigate(new SignInPage(this));
+            else if (pages == pages.CabinetAg)
+                FrameAuth.Navigate(new CabinetAgent(this));
+            else if (pages == pages.CabinetCl)
+                FrameAuth.Navigate(new CabinetClient(this));
             if (pages == pages.SignInPage2)
                 FrameAuth.Navigate(new SignInPage2(this));
         }

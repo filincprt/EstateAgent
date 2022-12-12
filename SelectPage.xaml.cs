@@ -31,17 +31,29 @@ namespace EstateAgent
 
         private void EnterBtn_Click(object sender, RoutedEventArgs e)
         {
+            const int roleClient = 3;
+            const int roleAgent = 4;
+
             if (LogTxtBox.Text.Length > 0)
             {
                 if (PasstxtBox.Password.Length > 0) // проверяем введён ли пароль         
                 {             // ищем в базе данных пользователя с такими данными         
-                    DataTable dt_user = mainWindow.Select("SELECT * FROM [dbo].[Client] WHERE [Login] = '" + LogTxtBox.Text + "' AND [Password] = '" + PasstxtBox.Password + "'");
-                    DataTable dt_users = mainWindow.Select("SELECT * FROM [dbo].[Agent] WHERE [Login] = '" + LogTxtBox.Text + "' AND [Password] = '" + PasstxtBox.Password + "'");
-                    if (dt_user.Rows.Count > 0 || dt_users.Rows.Count > 0) // если такая запись существует       
+                    DataTable dt_user = mainWindow.Select("SELECT * FROM [dbo].[Client] WHERE [Login] = '" + LogTxtBox.Text + "' AND [Password] = '" + PasstxtBox.Password + "'" + roleClient + "'");
+                    DataTable dt_users = mainWindow.Select("SELECT * FROM [dbo].[Agent] WHERE [Login] = '" + LogTxtBox.Text + "' AND [Password] = '" + PasstxtBox.Password + "'" + roleAgent + "'");
+
+                    if (dt_user.Rows.Count > 0) // если такая запись существует       
                     {
-                        MessageBox.Show("Пользователь авторизовался"); // говорим, что авторизовался         
+                        MessageBox.Show("Клиент авторизовался");
+                        mainWindow.OpenPage(MainWindow.pages.CabinetCl);
+                    }
+                    else if (dt_users.Rows.Count > 0)
+                    {
+                        MessageBox.Show("Риелтор авторизовался");
+                        mainWindow.OpenPage(MainWindow.pages.CabinetAg);
                     }
                     else MessageBox.Show("Пользователь не найден"); // выводим ошибку
+
+
                 }
                 else MessageBox.Show("Введите пароль"); // выводим ошибку
             }
