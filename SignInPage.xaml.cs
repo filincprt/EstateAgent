@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -56,9 +57,10 @@ namespace EstateAgent
                     {
 
                         DataTable dt_user1 = mainWindow.Select("SELECT * FROM [dbo].[Client] WHERE [Login] = '" + LogTxtBox.Text + "' AND [Password] = '" + PasstxtBox.Password + "'");
-                        if (dt_user1.Rows.Count > 0) // если такая запись существует       
+                        DataTable dt_user2 = mainWindow.Select("SELECT * FROM [dbo].[Agent] WHERE [Login] = '" + LogTxtBox.Text + "' AND [Password] = '" + PasstxtBox.Password + "'");
+                    if (dt_user1.Rows.Count > 0 || dt_user2.Rows.Count > 0) // если такая запись существует       
                         {
-                            MessageBox.Show("Пользователь уже зарегестрирован"); // говорим, что авторизовался         
+                            MessageBox.Show("Пользователь с таким логином уже зарегестрирован"); // говорим, что авторизовался         
                         }
                         else if (PasstxtBox.Password.Length > 0) // проверяем пароль
                         {
@@ -142,8 +144,13 @@ namespace EstateAgent
                                                                             string[] data2Login = dataLogin[1].Split('.'); // делим вторую часть ещё на две части
                                                                             if (data2Login.Length == 2)
                                                                             {
-                                                                                DataTable dt_user = mainWindow.Select($"INSERT INTO [dbo].[Client] VALUES ('{LastNameTxtBox.Text}', '{FirstNameTxtBox.Text}', '{MiddleNameTxtBox.Text}', '{NumTxtBox.Text}', '{EmailTxtBox.Text}', '{LogTxtBox.Text}', '{PasstxtBox.Password}', '{role}')");
-                                                                                MessageBox.Show("Пользователь зарегистрирован");
+                                                                            //DataTable dt_LogCl = mainWindow.Select("SELECT * FROM [dbo].[Client] WHERE ");
+                                                                            int id;
+                                                                            DataTable dt_user = mainWindow.Select($"INSERT INTO [dbo].[Client] VALUES ('{LastNameTxtBox.Text}', '{FirstNameTxtBox.Text}', '{MiddleNameTxtBox.Text}', '{NumTxtBox.Text}', '{EmailTxtBox.Text}', '{LogTxtBox.Text}', '{PasstxtBox.Password}', '{role}') RETURNIND {id} = [id_Client]");
+                                                                          //  SqlCommand sqlCommand = new SqlCommand("SELECT IDENT_CURRENT('Client') AS [IDENT_CURRENT]");
+                                                                           // int id = mainWindow.ReturnId();
+                                                                            MessageBox.Show("Пользователь зарегистрирован ");
+                                                                                
                                                                             }
                                                                             else MessageBox.Show("Укажите email в форме х@x.x");
                                                                         }
@@ -182,6 +189,18 @@ namespace EstateAgent
             {
                 e.Handled = true;
             }
+        }
+
+        private void debug_Click(object sender, RoutedEventArgs e)
+        {
+            LastNameTxtBox.Text = "DeleteUser";
+            MiddleNameTxtBox.Text = "DeleteUser";
+            FirstNameTxtBox.Text = "DeleteUser";
+            NumTxtBox.Text = "123456789";
+            LogTxtBox.Text = "Dedug";
+            PasstxtBox.Password = "123456789debug!";
+            PasstxtBox_Check.Password = "123456789debug!";
+            EmailTxtBox.Text = "debug@test.auto";
         }
     }
     

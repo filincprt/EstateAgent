@@ -69,6 +69,22 @@ namespace EstateAgent
             sqlConnection.Close();
             return dataTable;
         }
+
+
+        public int ReturnId()
+        {
+            SqlConnection con = new SqlConnection("Data Source=FILINCPRT\\SQLEXPRESS;Initial Catalog=Agent_rielorsDB;Integrated Security=True");
+            con.Open();
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = con;
+            SqlCommand command1 = new SqlCommand("SELECT @@IDENTITY AS [IDENTITY]", con);
+            int a = Convert.ToInt16(command1.ExecuteScalar());
+            return a;
+
+        }
+
+
+    
     }
     
 

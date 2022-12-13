@@ -41,5 +41,6 @@
         <TextBox x:Name="EmailTxtBox" HorizontalAlignment="Left" Grid.Column="1" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" Height="28" Margin="20,125,0,0" AutomationProperties.Name="EmailTxtBoxEnter" TextAlignment="Center"/>
         <TextBlock HorizontalAlignment="Left" Margin="104,111,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Email" VerticalAlignment="Top" FontFamily="Roboto Light" Grid.Column="1"/>
         <TextBlock HorizontalAlignment="Left" Margin="304,10,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Регистрация клиента" VerticalAlignment="Top" Grid.ColumnSpan="2" FontSize="20"/>
+        <Button x:Name="debug"  Content="Debug" HorizontalAlignment="Left" Margin="195,291,0,0" Grid.Row="1" VerticalAlignment="Top" Style="{StaticResource FlatButtonStyle}" Click="debug_Click"/>
     </Grid>
 </Page>
